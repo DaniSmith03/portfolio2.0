@@ -1,0 +1,226 @@
+/* Reset default margin and padding for elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Basic styles */
+body {
+  font-family: Arial, sans-serif;
+}
+
+.hero {
+  height: 100vh;
+  background-color: #ffffff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  overflow: hidden; /* Ensure sparkles stay within the header */
+}
+
+nav {
+  margin-top: 5%;
+  margin-bottom: -3%;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav li {
+  margin: 0 20px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+nav a {
+  text-decoration: none;
+  color: #454a47;
+}
+
+.block-quote-container {
+  background-color: pink;
+  width: 50%;
+  padding: 2% 5%;
+  border: solid purple 5px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.block-quote {
+  font-size: 20px;
+  font-family: sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+.author-quote {
+  margin-top: 1%;
+  padding-right: 30%;
+  align-self: flex-end;
+}
+
+.hero-content {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.hero-container {
+  margin-top: -3.5%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* margin-top: 20px; */
+  /* padding-top: 50px; */
+}
+.hero-sub-container-one {
+  flex-grow: 2;
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  max-height: 700px;
+  display: flex;
+  padding-top: 3.5%;
+  /* justify-content: center; */
+  align-items: center;
+  /* background-color: red; */
+  /* padding-top: 50px; */
+}
+.hero-sub-container-two {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  max-width: 500px;
+  max-height: 700px;
+  display: flex;
+  /* background-color: rgb(224, 96, 96); */
+  padding-top: 100px;
+}
+
+.hero-paragraph {
+  width: 75%;
+  font-family: 'Manrope', sans-serif;
+  font-size: 20px;
+  text-align: left;
+  margin-top: 20px;
+  /* background-color: aquamarine; */
+}
+
+.hero-image img {
+  max-width: 600px;
+  max-height: 600px;
+  /* background-color: aquamarine; */
+}
+
+/* Section styles */
+.section {
+  margin: 50px auto;
+  padding: 60px 0;
+  text-align: center;
+  color: #454a47;
+}
+
+.pink-bg {
+  background-color: #feafc1;
+}
+
+.white-bg {
+  background-color: #ffffff;
+}
+
+.yellow-bg {
+  background-color: #d99330;
+}
+
+.project-card {
+  border: 1px solid #a17e68;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.project-card h3 {
+  font-size: 20px;
+}
+
+.project-card a {
+  text-decoration: none;
+  background-color: #d99330;
+  color: #ffffff;
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+}
+
+footer {
+  background-color: #ffffff;
+  text-align: center;
+  padding: 40px 0;
+}
+
+footer ul {
+  list-style: none;
+  display: flex;
+}
+
+footer li {
+  margin: 0 20px;
+}
+
+footer a {
+  text-decoration: none;
+  color: #454a47;
+}
+
+.scrolling-words-container {
+  display: flex;
+  align-items: center;
+  font-size: 45px;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 500;
+
+  height: 20%;
+}
+
+.scrolling-words-box {
+  height: 3.5rem;
+  margin: auto;
+  overflow: hidden;
+}
+
+.scrolling-words-box ul {
+  margin: 0 0.625rem;
+  padding: 0;
+  animation: scrollUp 6s infinite;
+}
+
+.scrolling-words-box ul li {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 3.5rem;
+  list-style: none;
+}
+
+@keyframes scrollUp {
+  0%,
+  25% {
+    transform: translateY(0);
+  }
+  25%,
+  50% {
+    transform: translateY(-20%);
+  }
+  50%,
+  75% {
+    transform: translateY(-40%);
+  }
+  75%,
+  100% {
+    transform: translateY(-60%);
+  }
+}
