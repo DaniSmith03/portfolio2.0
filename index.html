@@ -13,13 +13,14 @@
     <title>Your Web Developer Portfolio</title>
   </head>
   <body>
-    <header class="hero">
+    <header id="home" class="hero">
       <nav>
         <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#portfolio">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#contact">Blog</a></li>
+          <li><a class="nav-link" href="#home">Home</a></li>
+          <li><a class="nav-link" href="#about">About</a></li>
+          <li><a class="nav-link" href="#portfolio">Projects</a></li>
+          <li><a class="nav-link" href="#contact">Contact</a></li>
+          <li><a class="nav-link" href="#blog">Blog</a></li>
         </ul>
       </nav>
       <div class="hero-content">
@@ -55,17 +56,45 @@
               </p>
             </div>
             <div class="socialIcons">
-              <div class="circle">
-                <img class="icon" src="images/resumeicon.png" />
+              <div class="iconContainer">
+                <a
+                  href="https://drive.google.com/file/d/1aljL0OBA0JQNiwkgoNdczEF9Eap6rLS8/view?usp=sharing"
+                >
+                  <div class="circle">
+                    <img
+                      class="icon"
+                      src="images/resumeicon.png"
+                      alt="Resume"
+                    />
+                  </div>
+                </a>
+                <p class="hover-text">Resume</p>
               </div>
-              <div class="circle">
-                <img class="icon" src="images/twitter (2).png" />
+              <div class="iconContainer">
+                <a href="https://twitter.com/TheCozyCoder_">
+                  <div class="circle">
+                    <img class="icon" src="images/twitter (2).png" />
+                  </div>
+                </a>
+
+                <p class="hover-text">Twitter</p>
               </div>
-              <div class="circle">
-                <img class="icon" src="images/linkedin (1).png" />
+              <div class="iconContainer">
+                <a href="https://www.linkedin.com/in/danisha-smith/">
+                  <div class="circle">
+                    <img class="icon" src="images/linkedin (1).png" />
+                  </div>
+                </a>
+                <p class="hover-text">LinkedIn</p>
               </div>
-              <div class="circle">
-                <img class="icon" src="images/github-logo.png" />
+              <div class="iconContainer">
+                <a href="https://github.com/DaniSmith03">
+                  <div class="circle">
+                    <img class="icon" src="images/github-logo.png" />
+                  </div>
+                </a>
+
+                <p class="hover-text">Github</p>
               </div>
             </div>
           </div>
@@ -76,18 +105,12 @@
           </div>
         </div>
       </div>
-      <!-- <div class="sparkles-container bottom-right">
-        <div class="sparkles"></div>
-        <div class="sparkles"></div>
-        <div class="sparkles"></div>
-       
+      <div class="enter">
+        <a id="enter" href="#about">
+          <div class="sparkle"></div>
+          <p>View Portfolio</p>
+        </a>
       </div>
-      <div class="sparkles-container">
-        <div class="sparkles"></div>
-        <div class="sparkles"></div>
-        <div class="sparkles"></div>
-      
-      </div> -->
     </header>
 
     <section id="about" class="section pink-bg">
