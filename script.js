@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function updateCardContent() {
     if (card.classList.contains('flipped')) {
-      image.src = './images/daniBubbles.png';
+      image.src = './images/party_image.png';
       document
         .querySelector('.original-img')
         .classList.replace('original-img', 'alt');
@@ -185,3 +185,5 @@ function closeWindow() {
 mobileNav.addEventListener('click', closeWindow);
 
 console.log(window.scrollY);
+
+//contactForm

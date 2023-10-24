@@ -10,7 +10,7 @@
 body {
   font-family: Arial, sans-serif;
   padding: 0 50px 0 50px;
-  border: red solid 5px;
+  /* border: red solid 5px; */
 
   /* display: flex;
   flex-direction: column; */
@@ -487,13 +487,14 @@ nav a:hover {
   justify-content: center;
   align-content: center; */
   /* padding: 5% 0; */
-  margin: 0 auto;
+  margin: 20px auto;
   /* margin: -5% auto 0px auto; */
   min-height: 100vh;
   /* border: solid red 5px; */
 }
 
 .about-me {
+  border: 5px solid rgb(232, 137, 153);
   padding: 60px 0;
   display: flex;
   flex-direction: column;
@@ -553,7 +554,7 @@ nav a:hover {
 .box {
   /* border: solid red 5px; */
   flex: 1;
-  height: 700px;
+  max-height: 700px;
   min-width: 500px;
   max-width: 800px;
   display: flex;
@@ -575,14 +576,14 @@ nav a:hover {
 .about-me-image p {
   font-size: 25px;
   font-weight: 500px;
-  margin-top: 4%;
+  margin-top: 2%;
 }
 .about-me-image a {
   color: inherit;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 500px;
-  margin-top: 4%;
+  margin-top: 1%;
 }
 .about-me-image a:hover {
   color: white;
@@ -645,6 +646,47 @@ nav a:hover {
   font-family: 'Manrope', sans-serif;
   font-weight: 500;
   font-size: 16px;
+}
+.about-me-bio .card button:hover {
+  animation: shake 01s;
+  animation-iteration-count: infinite;
+  color: white;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
 }
 
 .about-me-bio .card.flipped {
@@ -712,6 +754,11 @@ nav a:hover {
   align-content: center;
   flex-wrap: wrap;
 }
+.white-bg h2 {
+  margin: 50px;
+  font-size: 30px;
+  font-weight: 300;
+}
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
@@ -727,16 +774,16 @@ nav a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
   overflow: hidden;
   min-width: 500px;
   height: 300px;
-  border: 5px red solid;
+  /* border: 5px red solid; */
 }
 
 .image-container {
-  border: 5px red solid;
-  width: 350px;
+  /* border: 5px red solid; */
+
   position: absolute; /* Change to absolute positioning */
   overflow: hidden;
   z-index: 0; /* Set z-index to be below overlay */
@@ -744,9 +791,11 @@ nav a:hover {
   transition: opacity 0.3s; /* Add opacity transition */
 }
 
-img {
-  width: 100%;
-  height: auto;
+.image-container img {
+  width: 500px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50px;
   display: block;
   transition: transform 0.3s;
 }
@@ -768,6 +817,7 @@ img {
   text-align: center;
   /* visibility: hidden; */
   z-index: 1;
+  padding: 10px;
 }
 
 .overlay p {
@@ -798,6 +848,8 @@ img {
 }
 .grid-item:hover .image-container img {
   transform: scale(1.1);
+  height: 100%;
+  width: 100%;
 
   /* visibility: hidden; */
 }
@@ -809,7 +861,19 @@ img {
 }
 
 .yellow-bg {
+  display: flex;
+  justify-content: center;
+
   background-color: #d99330;
+}
+
+.contactMessage {
+  display: flex;
+  flex-direction: column;
+  margin: 0 30px;
+}
+.contactForm {
+  margin: 0 30px;
 }
 
 /* .project-card {
