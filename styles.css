@@ -9,11 +9,15 @@
 /* Basic styles */
 body {
   font-family: Arial, sans-serif;
+  padding: 0 50px 0 50px;
+  border: red solid 5px;
+
   /* display: flex;
   flex-direction: column; */
 }
 
 .hero {
+  /* z-index: 10; */
   /* flex-shrink: 1; */
   min-height: 100vh;
   background-color: #ffffff;
@@ -21,11 +25,12 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 
-  overflow: hidden; /* Ensure sparkles stay within the header */
+  /* overflow: hidden;  */
 }
 
-nav {
+.nav {
   height: 35px;
   padding: 15px 0;
   z-index: 1;
@@ -91,6 +96,129 @@ nav a:hover {
   color: rgb(225, 129, 145);
   font-weight: 700;
 }
+
+/* CSS For Responsive Nav Bar */
+
+/* Initial styles for the full navigation bar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #ffffff;
+  z-index: 6;
+  transition: top 0.3s;
+}
+.scrollNav {
+  background-color: #ffffff;
+}
+
+.fullNav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #ffffff;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+}
+
+.fullNav li {
+  margin: 50px 20px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 23px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.m-inactive {
+  display: none;
+}
+
+.m-active {
+  visibility: visible;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  z-index: 5;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(248, 161, 176, 0.945);
+}
+
+.m-active ul {
+  width: 200px;
+  height: 500px;
+  list-style: none;
+}
+.m-active li {
+  margin: 25px 30px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 23px;
+  font-weight: 500;
+}
+
+.m-active a {
+  text-decoration: none;
+  color: rgb(91, 91, 91);
+}
+.m-active a:hover {
+  font-size: 30px;
+  color: rgb(191, 78, 97);
+}
+/* Hamburger menu styles */
+.nav-toggle {
+  display: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #454a47;
+  margin: 5px auto;
+  transition: 0.4s;
+  z-index: 1;
+}
+
+.mobileNav {
+  display: none;
+}
+
+/* Media query to hide fullNav and show nav-toggle when the screen is small */
+@media screen and (max-width: 768px) {
+  #fullNav {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: block;
+    position: fixed;
+    top: 20px;
+    right: 10px;
+  }
+
+  .nav-toggle:hover div {
+    box-shadow: 1px 10px 3px rgba(118, 118, 116, 0.491);
+    width: 30px;
+    height: 5px;
+  }
+
+  /* .navbar.active {
+    top: 0;
+    z-index: 1;
+  } */
+}
+
+/* End CSS Responsive NavBar */
 
 .hero-content {
   text-align: center;
@@ -347,11 +475,11 @@ nav a:hover {
 
 /* Section styles */
 .section {
-  margin: 50px auto;
-  padding: 60px 0;
+  margin: 0px auto;
+  padding: 0px 0;
   text-align: center;
   color: #454a47;
-  width: 100vw;
+  /* width: 100vw; */
 }
 
 .about-me-white {
@@ -366,6 +494,7 @@ nav a:hover {
 }
 
 .about-me {
+  padding: 60px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -386,6 +515,7 @@ nav a:hover {
   margin: -100px auto 0px auto;
   /* box-shadow: 10px 20px 1px rgba(118, 118, 116, 0.491); */
   transition: box-shadow 0.5s ease-in-out; /* Add a transition for the box-shadow property */
+  z-index: 1;
 }
 
 .block-quote {
@@ -409,9 +539,9 @@ nav a:hover {
 }
 
 .about-me-container {
-  min-width: 100vw;
+  /* min-width: 100vw; */
   min-height: 75vh;
-  /* padding: 0 3%; */
+  padding: 0 3%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -424,7 +554,8 @@ nav a:hover {
   /* border: solid red 5px; */
   flex: 1;
   height: 700px;
-  max: 33%;
+  min-width: 500px;
+  max-width: 800px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -477,15 +608,8 @@ nav a:hover {
   /* box-shadow: 150px 0px 1px #fbbd048d; */
   transition: transform 0.5s ease-in-out;
 }
-.about-me-bio {
-  /* height: 600px;
-  width: 600px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: solid red 5px; */
-}
+/* .about-me-bio {
+} */
 .card {
   display: flex;
   flex-direction: column;
@@ -586,6 +710,7 @@ nav a:hover {
   flex-direction: column;
   justify-content: center;
   align-content: center;
+  flex-wrap: wrap;
 }
 .grid {
   display: grid;
@@ -597,6 +722,7 @@ nav a:hover {
 }
 
 .grid-item {
+  flex: 1;
   position: relative;
   display: flex;
   flex-direction: column;

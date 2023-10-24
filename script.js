@@ -124,3 +124,64 @@ window.addEventListener('scroll', function () {
     document.querySelector('.block-quote-container').classList.remove('raised');
   }
 });
+
+//NavBar Responsive
+
+const navbar = document.getElementById('navbar');
+const navToggle = document.getElementById('navToggle');
+const fullNav = document.getElementById('fullNav');
+const mobileNav = document.querySelector('.mobileNav');
+
+// Function to toggle the navigation bar and hamburger menu
+function toggleNav() {
+  navbar.classList.toggle('active');
+}
+
+// Add a scroll event listener to toggle the navigation bar
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 50) {
+    fullNav.classList.replace('nav', 'fullNav');
+    // fullNav.classList.add('inactive');
+  } else {
+    navbar.classList.replace('fullNav', 'nav');
+  }
+  if (window.scrollY == 0) {
+    fullNav.classList.replace('fullNav', 'nav');
+    // fullNav.classList.add('inactive');
+  }
+});
+
+// Add a click event listener to the hamburger menu
+navToggle.addEventListener('click', toggleNav);
+
+// Add a click event listener to close the navigation when a link is clicked
+fullNav.addEventListener('click', () => {
+  if (navbar.classList.contains('active')) {
+    toggleNav();
+  }
+});
+
+navbar.addEventListener('click', () => {
+  if (mobileNav.classList.contains('mobileNav')) {
+    console.log('navbar click');
+    mobileNav.classList.toggle('mobileNav');
+    mobileNav.classList.toggle('m-active');
+  } else {
+    mobileNav.classList.toggle('m-active');
+    mobileNav.classList.add('mobileNav');
+  }
+});
+
+function closeWindow() {
+  if (mobileNav.classList.contains('mobileNav')) {
+    console.log('navbar click');
+    mobileNav.classList.toggle('mobileNav');
+    mobileNav.classList.toggle('m-active');
+  } else {
+    mobileNav.classList.toggle('m-active');
+    mobileNav.classList.add('mobileNav');
+  }
+}
+mobileNav.addEventListener('click', closeWindow);
+
+console.log(window.scrollY);
