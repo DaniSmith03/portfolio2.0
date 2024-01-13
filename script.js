@@ -184,6 +184,23 @@ function closeWindow() {
 }
 mobileNav.addEventListener('click', closeWindow);
 
-console.log(window.scrollY);
+// console.log(window.scrollY);
 
 //contactForm
+const contactForm = document.getElementById('contactForm');
+
+contactForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  // Get form data
+
+  emailjs.sendForm('service_8bkxw16', 'template_sp3r1nc', contactForm).then(
+    function (response) {
+      contactForm.reset();
+      console.log('SUCCESS!', response.status, response.text);
+    },
+    function (error) {
+      console.log('FAILED...', error);
+    }
+  );
+});
