@@ -470,15 +470,15 @@ nav a:hover {
 }
 
 .about-me {
-  border: 5px solid rgb(232, 137, 153);
-  padding: 60px 0;
+  /* border: 5px solid rgb(232, 137, 153); */
+  padding: 30px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
 
   margin-top: 5%;
-  background-color: rgb(241, 153, 168);
+  background-color: rgb(232, 137, 153);
 }
 
 .block-quote-container {
@@ -500,12 +500,12 @@ nav a:hover {
   font-family: 'Manrope', sans-serif;
   font-weight: 700;
   font-style: italic;
-  transition: transform 0.5s ease-in-out; /* Add a transition for the transform property */
+  transition: transform 0.5s ease-in-out;
 }
 
 /* Add a class for when the quote is raised */
 .block-quote-container.raised {
-  box-shadow: 20px 30px 2px rgba(118, 118, 116, 0.491); /* Adjust the shadow values */
+  box-shadow: 20px 30px 2px rgba(118, 118, 116, 0.491);
   /* transform: translateY(-20px); Move the quote up */
 }
 
@@ -516,8 +516,9 @@ nav a:hover {
 }
 
 .about-me-container {
+  align-self: center;
   /* min-width: 100vw; */
-
+  width: 95%;
   min-height: 75vh;
   padding: 0 3%;
   display: flex;
@@ -862,11 +863,12 @@ nav a:hover {
   display: flex;
   justify-content: center;
 
-  background-color: #d99330;
+  background-color: rgb(255, 172, 46);
 }
 
 .yellow-bg .container {
-  width: 90%;
+  width: 95%;
+  height: 95%;
 
   margin: 25px auto;
   padding: 50px 0px;
@@ -891,12 +893,44 @@ nav a:hover {
 .contactMessage h2 {
   color: #454a47;
   font-family: 'Manrope', sans-serif;
-  font-weight: 400;
+  font-size: 30px;
+  font-weight: 300;
 }
 .contactMessage p {
   font-size: 18px;
   margin: 5px 0;
 }
+
+.contactMessage ul {
+  margin: 50px 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+.contactMessage li {
+  color: rgb(241, 153, 168);
+  margin: 0 20px;
+}
+
+.contactMessage a {
+  border-radius: 10px;
+  border: 5px solid rgb(234, 125, 143);
+  padding: 5px 8px;
+  font-size: 18px;
+  color: rgb(234, 125, 143);
+  text-decoration: none;
+}
+.contactMessage a:hover {
+  border-radius: 10px;
+  border-color: rgba(248, 161, 176, 0.806);
+  background-color: rgba(248, 161, 176, 0.806);
+  box-shadow: 10px 10px 10px rgba(248, 161, 176, 0.806);
+  font-size: 18px;
+  color: white;
+  text-decoration: none;
+}
+
 #contactForm {
   padding: 20px;
   border: 4px solid rgb(241, 153, 168);
@@ -914,7 +948,6 @@ form label {
 }
 form input {
   border-radius: 10px;
-  color: white;
   width: 500px;
   border: 0;
   padding: 25px;
@@ -944,25 +977,15 @@ form button {
   font-weight: 500;
   font-size: 20px;
 }
+form button:hover {
+  color: white;
+  border-color: white;
+}
 
 footer {
-  background-color: #d99330;
+  /* background-color: #d99330; */
   text-align: center;
-  padding: 40px 0;
-}
-
-footer ul {
-  list-style: none;
-  display: flex;
-}
-
-footer li {
-  margin: 0 20px;
-}
-
-footer a {
-  text-decoration: none;
-  color: #454a47;
+  padding: 10px 0px;
 }
 
 /* 
@@ -996,7 +1019,7 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
   }
 
   .about-me-container {
-    margin-top: 15px;
+    /* margin-top: 15px; */
     min-height: 75vh;
     padding: 0 3%;
     display: flex;
@@ -1046,8 +1069,8 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
     color: white;
   }
   .original-img {
-    height: 450px;
-    width: 450px;
+    height: 350px;
+    width: 350px;
     border-radius: 50%;
     border: solid #fbbd0494 5px;
     object-fit: cover;
@@ -1056,8 +1079,8 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
   }
 
   .alt {
-    height: 450px;
-    width: 450px;
+    height: 350px;
+    width: 350px;
     border-radius: 50%;
     border: solid #fbbd0494 5px;
     object-fit: cover;
@@ -1910,23 +1933,79 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
   .yellow-bg {
     display: flex;
     justify-content: center;
-
-    background-color: #d99330;
   }
 
   .contactMessage {
+    width: 90%;
     display: flex;
     flex-direction: column;
     margin: 0 30px;
+  }
+
+  .contactMessage ul {
+    margin: 50px 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+  }
+
+  .contactMessage li {
+    color: rgb(241, 153, 168);
+    /* margin: 0 20px; */
   }
   .contactForm {
     margin: 0 30px;
   }
 
+  #contactForm {
+    padding: 20px;
+    border: 4px solid rgb(241, 153, 168);
+    border-radius: 25px;
+    background-color: rgba(248, 161, 176, 0.806);
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin: 0 30px;
+  }
+  form label {
+    visibility: hidden;
+  }
+  form input {
+    border-radius: 10px;
+    width: 90%;
+    border: 0;
+    padding: 25px;
+    height: 50px;
+    outline: none;
+    font-size: 20px;
+    background-color: rgba(230, 195, 201, 0.665);
+  }
+  form textarea {
+    width: 90%;
+    padding: 25px;
+    border: 0;
+    border-radius: 10px;
+    height: 300px;
+    outline: none;
+    font-size: 20px;
+    background-color: rgba(230, 195, 201, 0.665);
+  }
+  form button {
+    margin: 25px 0px 10px 0px;
+    width: 150px;
+    height: 50px;
+    border-radius: 25px;
+    border: 3px solid black;
+    background-color: rgb(249, 186, 107);
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+  }
+
   footer {
-    background-color: #d99330;
     text-align: center;
-    padding: 40px 0;
   }
 
   footer ul {
