@@ -680,6 +680,8 @@ nav a:hover {
   position: absolute;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
+  transform: rotateX(0deg);
+  background: transparent;
 }
 
 .back ul {
@@ -1740,6 +1742,8 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
     position: absolute;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
+    transform: rotateX(0deg);
+    background: transparent;
   }
 
   .back ul {
@@ -2261,6 +2265,8 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
     position: absolute;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
+    transform: rotateX(0deg);
+    background: transparent;
   }
 
   .back ul {
