@@ -1308,6 +1308,16 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
 }
 
 @media screen and (max-width: 1450px) {
+  .fullNav {
+    display: none;
+  }
+
+  .nav-toggle {
+    /* display: none; */
+    position: fixed;
+    top: 20px;
+  }
+
   .block-quote-container {
     border: 3px solid rgb(232, 137, 153);
     border-radius: 25px;

@@ -137,9 +137,16 @@ function toggleNav() {
   navbar.classList.toggle('active');
 }
 
+// window.visualViewport.width <= 1450
+//   ? (document.querySelector('.nav-toggle').style.display = 'block')
+//   : (document.querySelector('.nav-toggle').style.display = 'none');
+
 // Add a scroll event listener to toggle the navigation bar
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 50) {
+  if (window.scrollY > 50 && window.visualViewport.width <= 1450) {
+    fullNav.classList.replace('nav', 'fullNav');
+    document.querySelector('.nav-toggle').style.display = 'block';
+  } else if (window.scrollY > 50) {
     fullNav.classList.replace('nav', 'fullNav');
     // fullNav.classList.add('inactive');
   } else {
@@ -147,6 +154,7 @@ window.addEventListener('scroll', () => {
   }
   if (window.scrollY == 0) {
     fullNav.classList.replace('fullNav', 'nav');
+    document.querySelector('.nav-toggle').style.display = 'none';
     // fullNav.classList.add('inactive');
   }
 });
