@@ -9,7 +9,7 @@
 
 /* Basic styles */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Manrope', sans-serif;
   padding: 0 50px 0 50px;
   /* border: red solid 5px; */
 
@@ -32,7 +32,7 @@ body {
 }
 
 .nav {
-  max-height: 30px;
+  max-height: 20px;
   padding: 15px 0;
   z-index: 1;
   margin-top: 5%;
@@ -611,9 +611,10 @@ nav a:hover {
   transition: transform 0.5s;
 }
 .front h2 {
+  font-weight: 500;
   align-self: baseline;
   text-decoration: underline;
-  font-size: 30px;
+  font-size: 25px;
 }
 .about-me-bio .card p {
   text-align: left;
@@ -689,6 +690,13 @@ nav a:hover {
   background: transparent;
 }
 
+.back h2 {
+  font-weight: 500;
+  align-self: baseline;
+  text-decoration: underline;
+  font-size: 25px;
+}
+
 .back ul {
   list-style: none;
 }
@@ -713,7 +721,13 @@ nav a:hover {
   background-color: #fbbd0494;
   border-radius: 5%;
 }
-
+.about-me-tools h2 {
+  font-weight: 500;
+  margin: -20px auto 30px auto;
+  align-self: center;
+  text-decoration: underline;
+  font-size: 25px;
+}
 .about-me-tools p {
   margin-bottom: 4%;
   font-size: 25px;
@@ -732,6 +746,7 @@ nav a:hover {
 .toolBox {
   display: flex;
   flex-direction: column;
+  align-items: center;
   height: 50px;
   width: 50px;
   background-color: #2d302ed8;
@@ -1001,6 +1016,296 @@ footer {
 
 /* 
 Media query to hide fullNav and show nav-toggle when the screen is small  */
+
+@media screen and (max-width: 1800px) {
+  .fullNav li {
+    margin: 44px 20px 25px 10px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 23px;
+    font-weight: 500;
+    display: inline-block;
+  }
+
+  #about {
+    scroll-margin-top: 180px;
+  }
+
+  .block-quote-container {
+    border: 3px solid rgb(232, 137, 153);
+    border-radius: 25px;
+    background-color: rgb(245, 191, 200);
+    width: 90%;
+    padding: 1% 3%;
+    display: flex;
+    flex-direction: column;
+    margin: -100px auto 0px auto;
+    transition: box-shadow 0.5s ease-in-out;
+    z-index: 1;
+  }
+
+  .block-quote {
+    font-size: 20px;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-style: italic;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  /* Add a class for when the quote is raised */
+  .block-quote-container.raised {
+    box-shadow: 10px 10px 2px rgba(118, 118, 116, 0.491);
+  }
+
+  .about-me-container {
+    /* margin-top: 15px; */
+    min-height: 75vh;
+
+    padding: 2% 2%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(241, 153, 168);
+
+    flex-wrap: wrap;
+  }
+  .box {
+    /* flex: 1; */
+    /* max-height: 800px; */
+    /* min-width: 700px; */
+    /* max-width: 1000px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+  }
+
+  .about-me-bio {
+    min-width: 80%;
+  }
+  .about-me-image {
+    /* border-radius: 5px;
+    border:5px solid blue; */
+
+    min-height: 45vh;
+    min-width: 20%;
+
+    background-color: #fbbd0494;
+    border-radius: 25px 0px 0px 0px;
+    flex-direction: column;
+  }
+
+  .about-me-image p {
+    font-size: 20px;
+    font-weight: 500px;
+    margin-top: 2%;
+  }
+  .about-me-image a {
+    color: inherit;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500px;
+    margin-top: 1%;
+  }
+  .about-me-image a:hover {
+    color: white;
+  }
+  .original-img {
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    border: solid #fbbd0494 5px;
+    object-fit: cover;
+    object-position: 0 8%;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .alt {
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    border: solid #fbbd0494 5px;
+    object-fit: cover;
+    object-position: 0 30%;
+
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .about-me-bio .card {
+    align-self: flex-end;
+    /* padding: 5%; */
+    background-color: white;
+    max-height: 45vh;
+    min-width: 100%;
+    border-radius: 0px 25px 0px 0px;
+    box-shadow: none;
+
+    border: 1px solid #fbbd0494;
+
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+  }
+  .front h2 {
+    align-self: baseline;
+    text-decoration: underline;
+    font-size: 25px;
+    margin-bottom: 1%;
+  }
+  .about-me-bio .card p {
+    font-size: 16px;
+    text-align: left;
+    margin-top: 10px;
+  }
+  .about-me-bio .card button {
+    margin-top: 10px;
+    width: 150px;
+    height: 50px;
+    border-radius: 25px;
+    border: 3px solid black;
+    background-color: rgb(249, 186, 107);
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+  }
+  .about-me-bio .card button:hover {
+    animation: shake 01s;
+    animation-iteration-count: infinite;
+    color: white;
+  }
+
+  @keyframes shake {
+    0% {
+      transform: translate(1px, 1px) rotate(0deg);
+    }
+    10% {
+      transform: translate(-1px, -2px) rotate(-1deg);
+    }
+    20% {
+      transform: translate(-3px, 0px) rotate(1deg);
+    }
+    30% {
+      transform: translate(3px, 2px) rotate(0deg);
+    }
+    40% {
+      transform: translate(1px, -1px) rotate(1deg);
+    }
+    50% {
+      transform: translate(-1px, 2px) rotate(-1deg);
+    }
+    60% {
+      transform: translate(-3px, 1px) rotate(0deg);
+    }
+    70% {
+      transform: translate(3px, 1px) rotate(-1deg);
+    }
+    80% {
+      transform: translate(-1px, -1px) rotate(1deg);
+    }
+    90% {
+      transform: translate(1px, 2px) rotate(0deg);
+    }
+    100% {
+      transform: translate(1px, -2px) rotate(-1deg);
+    }
+  }
+
+  .about-me-bio .card.flipped {
+    transform: rotateY(180deg);
+    border-radius: 25px 0px 0px 0px;
+  }
+
+  .front,
+  .back {
+    font-size: 16px;
+    padding: 5% 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    backface-visibility: hidden;
+  }
+  .back h2 {
+    align-self: baseline;
+    text-decoration: underline;
+    font-size: 25px;
+    margin-bottom: 1%;
+  }
+
+  .listContainer {
+    display: flex;
+    justify-content: space-between;
+  }
+  .listContainer ul {
+    max-width: 500px;
+    text-align: left;
+  }
+
+  .front {
+    z-index: 2;
+    padding: 2%;
+  }
+
+  .back {
+    transform: rotateY(180deg);
+  }
+  .about-me-tools {
+    min-height: 20vh;
+    min-width: 100%;
+    background-color: #fbbd0494;
+    border-radius: 0px 0px 25px 25px;
+  }
+  .about-me-tools h2 {
+    margin: 5px auto;
+    text-decoration: underline;
+    font-size: 25px;
+    text-align: center;
+  }
+
+  .about-me-tools p {
+    margin-bottom: 0%;
+    font-size: 18px;
+    font-weight: 500px;
+  }
+
+  .toolContainer {
+    min-height: 7vh;
+    min-width: 100%;
+    display: flex;
+    background-color: #fbbd0494;
+    justify-content: space-evenly;
+    align-items: center;
+
+    border-radius: 0px 0px 25px 25px;
+  }
+
+  .toolBox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #464a48ec;
+    border: 2px solid black;
+    border-radius: 50%;
+  }
+
+  .toolBox img {
+    height: 50px;
+    width: 50px;
+  }
+
+  #portfolio {
+    scroll-margin-top: 175px;
+  }
+  .white-bg {
+    margin: 50px auto;
+  }
+}
 
 @media screen and (max-width: 1450px) {
   .block-quote-container {
