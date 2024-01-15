@@ -32,7 +32,7 @@ body {
 }
 
 .nav {
-  height: 35px;
+  max-height: 30px;
   padding: 15px 0;
   z-index: 1;
   margin-top: 5%;
@@ -458,14 +458,17 @@ nav a:hover {
   /* width: 100vw; */
 }
 
+#about {
+  scroll-margin-top: 215px;
+}
 .about-me-white {
   /* display: flex;
   justify-content: center;
   align-content: center; */
   /* padding: 5% 0; */
-  margin: 20px auto;
+  margin: 20px auto 0px auto;
   /* margin: -5% auto 0px auto; */
-  min-height: 100vh;
+  min-height: 80vh;
   /* border: solid red 5px; */
 }
 
@@ -486,7 +489,7 @@ nav a:hover {
   border-radius: 25px;
   background-color: rgb(245, 191, 200);
   width: 50%;
-  padding: 2% 5%;
+  padding: 1% 5%;
   display: flex;
   flex-direction: column;
   margin: -100px auto 0px auto;
@@ -505,7 +508,7 @@ nav a:hover {
 
 /* Add a class for when the quote is raised */
 .block-quote-container.raised {
-  box-shadow: 20px 30px 2px rgba(118, 118, 116, 0.491);
+  box-shadow: 20px 10px 2px rgba(118, 118, 116, 0.491);
   /* transform: translateY(-20px); Move the quote up */
 }
 
@@ -518,8 +521,9 @@ nav a:hover {
 .about-me-container {
   align-self: center;
   /* min-width: 100vw; */
+  margin-top: -25px;
   width: 95%;
-  min-height: 75vh;
+  min-height: 70vh;
   padding: 0 3%;
   display: flex;
   align-items: center;
@@ -593,6 +597,7 @@ nav a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 .about-me-bio .card {
   /* padding: 5%; */
@@ -615,7 +620,7 @@ nav a:hover {
   margin-top: 10px;
 }
 .about-me-bio .card button {
-  margin-top: 30px;
+  margin-top: 10px;
   width: 150px;
   height: 50px;
   border-radius: 25px;
@@ -746,7 +751,11 @@ nav a:hover {
   width: 75px;
 }
 
+#portfolio {
+  scroll-margin-top: 233px;
+}
 .white-bg {
+  margin: 15px auto;
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
@@ -2131,6 +2140,7 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
   }
 
   /* bio content */
+
   .about-me-white {
     /* display: flex;
   justify-content: center;

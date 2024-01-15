@@ -204,3 +204,7 @@ contactForm.addEventListener('submit', (event) => {
     }
   );
 });
+
+//Code to help with where the anchor tags land
+
+// The function actually applying the offset
