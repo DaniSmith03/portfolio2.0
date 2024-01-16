@@ -6,7 +6,9 @@
   box-sizing: border-box;
   font-family: 'Manrope', sans-serif;
 }
-
+b {
+  color: rgb(210, 69, 93);
+}
 /* Basic styles */
 body {
   font-family: 'Manrope', sans-serif;
@@ -179,15 +181,22 @@ nav a:hover {
   display: none;
   cursor: pointer;
   padding: 10px;
+  top: 20px;
+  right: 0px;
 }
 
 .bar {
-  width: 25px;
+  width: 35px;
   height: 3px;
   background-color: #454a47;
   margin: 5px auto;
   transition: 0.4s;
   z-index: 1;
+}
+.nav-toggle:hover .bar {
+  background-color: #fbbd04;
+  height: 5px;
+  width: 38px;
 }
 
 .mobileNav {
@@ -517,6 +526,9 @@ nav a:hover {
   padding-right: 30%;
   align-self: flex-end;
 }
+.block-quote-container-2 {
+  display: none;
+}
 
 .about-me-container {
   align-self: center;
@@ -555,7 +567,7 @@ nav a:hover {
   border-radius: 5%;
 }
 
-.about-me-image p {
+.location p {
   font-size: 25px;
   font-weight: 500px;
   margin-top: 2%;
@@ -853,16 +865,24 @@ nav a:hover {
 .project-button,
 .github-button {
   padding: 10px 20px;
-  background-color: #3498db;
+  background-color: rgb(210, 69, 93);
+  border-radius: 5px;
   color: #fff;
   border: none;
   cursor: pointer;
   margin: 5px;
+  width: 100px;
 }
 
 .project-button:hover,
 .github-button:hover {
-  background-color: #2980b9;
+  background-color: rgb(185, 61, 82);
+  border-radius: 5px;
+}
+
+.project-button a,
+.github-button a {
+  color: white;
 }
 
 .grid-item:hover .image-container {
@@ -1097,7 +1117,7 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
     flex-direction: column;
   }
 
-  .about-me-image p {
+  .location p {
     font-size: 20px;
     font-weight: 500px;
     margin-top: 2%;
@@ -1255,6 +1275,9 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
   .back {
     transform: rotateY(180deg);
   }
+  .about-me-tools-2 {
+    display: none;
+  }
   .about-me-tools {
     min-height: 20vh;
     min-width: 100%;
@@ -1307,7 +1330,7 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
   }
 }
 
-@media screen and (max-width: 1450px) {
+@media screen and (max-width: 1455px) {
   .fullNav {
     display: none;
   }
@@ -1318,49 +1341,367 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
     top: 20px;
   }
 
+  .hero-content {
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  .hero-container {
+    margin-top: -3.5%;
+    display: flex;
+
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap;
+    /* margin-bottom: 500px; */
+  }
+  .hero-sub-container-one {
+    flex-shrink: 1;
+    flex-grow: 2;
+    display: flex;
+    flex-direction: column;
+    max-width: 450px;
+    max-height: 700px;
+    display: flex;
+    padding-top: 5%;
+
+    align-items: center;
+  }
+  .hero-sub-container-two {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    max-width: 550px;
+    max-height: 700px;
+    display: flex;
+
+    padding-top: 100px;
+  }
+
+  .hero-paragraph {
+    width: 80%;
+    min-width: 100%;
+    font-family: 'Manrope', sans-serif;
+    font-size: 20px;
+    text-align: left;
+    margin-top: 20px;
+  }
+
+  .hero-image img {
+    max-width: 600px;
+    max-height: 600px;
+  }
+
+  .socialIcons {
+    padding: 0 10%;
+    margin-top: 4%;
+    display: flex;
+    width: 75%;
+    min-width: 100%;
+    height: 100px;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .iconContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    margin: 2px auto;
+  }
+  .circle {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+
+    width: 70px;
+    border-radius: 25%;
+    border: 4px solid rgb(241, 153, 168);
+    background-color: rgba(248, 161, 176, 0.806);
+    transition: background-color 0.5s; /* Add a smooth transition on background-color property */
+  }
+
+  .circle img {
+    width: 50px;
+    height: 50px;
+    padding: 2%;
+    border: 2px solid rgba(0, 0, 0, 0.567);
+    border-radius: 50%;
+    background-color: #fbbd0494;
+    transition: transform 0.5s, filter 0.5s; /* Add a smooth transition on transform and filter properties */
+  }
+
+  .hover-text {
+    background-color: transparent;
+    opacity: 0;
+    visibility: hidden;
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'Manrope', sans-serif;
+    transition: opacity 0.5s, visibility 0.5s;
+    box-shadow: 0px 5px 5px rgba(194, 158, 29, 0.491);
+  }
+
+  .circle:hover {
+    background-color: rgb(241, 153, 168);
+    border-color: rgba(248, 161, 176, 0.578);
+  }
+
+  .circle:hover img {
+    filter: invert(1) hue-rotate(180deg) brightness(2);
+    /* Invert the colors and adjust the brightness to achieve the specific pink shade */
+    animation: spin 3s linear infinite; /* Apply the spin animation on hover */
+    transform-origin: center;
+  }
+
+  .iconContainer:hover p {
+    opacity: 1; /* On hover of .iconContainer, set the opacity to 1 to fade in the text */
+    visibility: visible; /* Change visibility to visible on hover */
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotateY(0deg); /* Start at 0 degrees on the Y-axis */
+    }
+    100% {
+      transform: rotateY(360deg); /* End at 360 degrees on the Y-axis */
+    }
+  }
+
+  .enter {
+    position: relative;
+    bottom: 110px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 16px;
+    font-family: 'Manrope', sans-serif;
+  }
+  .enter p {
+    margin-top: 30px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s, visibility 0.5s;
+  }
+
+  .enter a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .enter:hover p {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .sparkle {
+    margin: 0 auto;
+    background: rgb(255, 172, 46);
+    height: 2em;
+    width: 2em;
+    border-radius: 0.5em;
+    transform: rotate(45deg);
+    /* position: relative; */
+    transition: font-size 0.3s ease-in-out;
+    box-shadow: 1px 10px 3px rgba(118, 118, 116, 0.491);
+    animation: floating 2s infinite;
+  }
+  .sparkle::before,
+  .sparkle::after {
+    content: '';
+    position: absolute;
+    background: inherit;
+    box-shadow: 1px 10px 3px rgba(118, 118, 116, 0.491);
+
+    top: -0.5em;
+    right: -1.5em;
+    height: 1em;
+    width: 1em;
+    border-radius: 0.3em;
+  }
+  .sparkle::after {
+    top: 1.2em;
+    right: -1.3em;
+    height: 0.6em;
+    width: 0.6em;
+    border-radius: 0.2em;
+  }
+
+  .sparkle:hover {
+    font-size: 1.1em;
+  }
+
+  @keyframes floating {
+    0% {
+      transform: rotate(45deg) translateY(0);
+    }
+    50% {
+      transform: rotate(45deg) translateY(10px);
+    }
+    100% {
+      transform: rotate(45deg) translateY(0);
+    }
+  }
+
+  .scrolling-words-container {
+    display: flex;
+    align-items: center;
+    font-size: 40px;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+
+    height: 20%;
+    min-height: 20%;
+  }
+
+  .scrolling-words-box {
+    height: 7rem;
+    min-height: 7rem;
+    margin: auto;
+    overflow: hidden;
+  }
+
+  .scrolling-words-box ul {
+    margin: 0 0.625rem;
+    padding: 0;
+    animation: scrollUp 6s infinite;
+  }
+
+  .scrolling-words-box ul li {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 7rem;
+    min-height: 7rem;
+    list-style: none;
+  }
+
+  @keyframes scrollUp {
+    0%,
+    25% {
+      transform: translateY(0);
+    }
+    25%,
+    50% {
+      transform: translateY(-20%);
+    }
+    50%,
+    75% {
+      transform: translateY(-40%);
+    }
+    75%,
+    100% {
+      transform: translateY(-60%);
+    }
+  }
+
+  #about {
+    scroll-margin-top: 12px;
+  }
+
+  .about-me-white {
+    /* display: flex;
+  justify-content: center;
+  align-content: center; */
+    /* padding: 5% 0; */
+    margin: 20px auto 0px auto;
+    /* margin: -5% auto 0px auto; */
+    min-height: 80vh;
+    /* border: solid red 5px; */
+  }
+
+  .about-me {
+    /* border: 5px solid red; */
+    padding: 50px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+
+    margin-top: 5%;
+    background-color: rgb(232, 137, 153);
+  }
+
   .block-quote-container {
     border: 3px solid rgb(232, 137, 153);
     border-radius: 25px;
     background-color: rgb(245, 191, 200);
     width: 90%;
-    padding: 2% 5%;
-    display: flex;
+    padding: 1% 3%;
+    display: none;
     flex-direction: column;
     margin: -100px auto 0px auto;
     transition: box-shadow 0.5s ease-in-out;
     z-index: 1;
   }
 
-  .block-quote {
+  /* .block-quote {
     font-size: 20px;
     font-family: 'Manrope', sans-serif;
     font-weight: 700;
     font-style: italic;
     transition: transform 0.5s ease-in-out;
-  }
+  } */
 
   /* Add a class for when the quote is raised */
   .block-quote-container.raised {
-    box-shadow: 10px 15px 2px rgba(118, 118, 116, 0.491);
+    box-shadow: 10px 10px 2px rgba(118, 118, 116, 0.491);
   }
+
+  .block-quote-container-2 {
+    border: 3px solid rgb(232, 137, 153);
+    border-radius: 25px;
+    background-color: rgb(245, 191, 200);
+    width: 100%;
+
+    padding: 5% 5%;
+    display: flex;
+    flex-direction: column;
+    margin: 0px auto 20px auto;
+    transition: box-shadow 0.5s ease-in-out;
+    z-index: 1;
+  }
+
+  .block-quote-2 {
+    flex-grow: 2;
+    font-size: 16px;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .author-quote-2 {
+    margin-top: 1%;
+    padding-right: 30%;
+    align-self: flex-end;
+    font-size: 12px;
+  }
+
+  /* Add a class for when the quote is raised */
 
   .about-me-container {
     /* margin-top: 15px; */
-    min-height: 75vh;
-    padding: 0 3%;
+    min-height: 100vh;
+    padding: 2% 2%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     background-color: rgb(241, 153, 168);
-
-    flex-wrap: wrap;
   }
   .box {
-    flex: 1;
-    max-height: 800px;
-    min-width: 700px;
-    max-width: 1000px;
+    /* flex: 1; */
+    /* max-height: 800px; */
+    /* min-width: 700px; */
+    /* max-width: 1000px; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1369,18 +1710,23 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
   }
 
   .about-me-bio {
-    min-width: 100%;
+    min-width: 72%;
   }
   .about-me-image {
-    min-height: 500px;
-    min-width: 90%;
+    border-radius: 5px;
+    /* border: 5px solid blue; */
+
+    min-height: 70vh;
+    min-width: 28%;
+    max-width: 25%;
+
     background-color: #fbbd0494;
-    border-radius: 0;
-    flex-direction: row;
+    border-radius: 25px 0px 0px 0px;
+    flex-direction: column;
   }
 
-  .about-me-image p {
-    font-size: 25px;
+  .location p {
+    font-size: 20px;
     font-weight: 500px;
     margin-top: 2%;
   }
@@ -1395,8 +1741,8 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
     color: white;
   }
   .original-img {
-    height: 350px;
-    width: 350px;
+    height: 250px;
+    width: 250px;
     border-radius: 50%;
     border: solid #fbbd0494 5px;
     object-fit: cover;
@@ -1405,8 +1751,8 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
   }
 
   .alt {
-    height: 350px;
-    width: 350px;
+    height: 250px;
+    width: 250px;
     border-radius: 50%;
     border: solid #fbbd0494 5px;
     object-fit: cover;
@@ -1421,11 +1767,14 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
     align-items: center;
   }
   .about-me-bio .card {
+    align-self: flex-end;
     /* padding: 5%; */
     background-color: white;
-    min-height: 500px;
-    min-width: 90%;
-    border-radius: 0;
+    /* max-height: 70vh; */
+    min-height: 70vh;
+    min-width: 100%;
+
+    border-radius: 0px 25px 0px 0px;
     box-shadow: none;
 
     border: 1px solid #fbbd0494;
@@ -1436,15 +1785,16 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
   .front h2 {
     align-self: baseline;
     text-decoration: underline;
-    font-size: 30px;
+    font-size: 25px;
     margin-bottom: 1%;
   }
   .about-me-bio .card p {
+    font-size: 16px;
     text-align: left;
     margin-top: 10px;
   }
   .about-me-bio .card button {
-    margin-top: 30px;
+    margin-top: 10px;
     width: 150px;
     height: 50px;
     border-radius: 25px;
@@ -1498,68 +1848,127 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
 
   .about-me-bio .card.flipped {
     transform: rotateY(180deg);
+    border-radius: 25px 0px 0px 0px;
   }
 
   .front,
   .back {
-    padding: 5%;
+    font-size: 16px;
+    padding: 5% 2%;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: absolute;
     backface-visibility: hidden;
   }
+  .back h2 {
+    align-self: baseline;
+    text-decoration: underline;
+    font-size: 25px;
+    margin-bottom: 1%;
+  }
+
+  .listContainer {
+    display: flex;
+    justify-content: space-between;
+  }
+  .listContainer ul {
+    max-width: 500px;
+    text-align: left;
+  }
 
   .front {
     z-index: 2;
-    padding: 10%;
+    padding: 2%;
   }
 
   .back {
     transform: rotateY(180deg);
   }
+  .about-me-tools-2 {
+    display: none;
+  }
   .about-me-tools {
-    min-height: 600px;
-    min-width: 90%;
+    min-height: 20vh;
+    min-width: 100%;
     background-color: #fbbd0494;
-    border-radius: 0;
+    border-radius: 0px 0px 25px 25px;
+  }
+  .about-me-tools h2 {
+    margin: 5px auto;
+    text-decoration: underline;
+    font-size: 25px;
+    text-align: center;
   }
 
   .about-me-tools p {
-    margin-bottom: 4%;
-    font-size: 25px;
+    margin-bottom: 0%;
+    font-size: 18px;
     font-weight: 500px;
   }
 
   .toolContainer {
-    min-height: 200px;
-    min-width: 60%;
+    min-height: 7vh;
+    min-width: 100%;
     display: flex;
     background-color: #fbbd0494;
     justify-content: space-evenly;
     align-items: center;
-    border-radius: none;
+
+    border-radius: 0px 0px 25px 25px;
   }
 
   .toolBox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     background-color: #464a48ec;
     border: 2px solid black;
     border-radius: 50%;
   }
 
   .toolBox img {
-    height: 75px;
-    width: 75px;
+    height: 50px;
+    width: 50px;
+  }
+
+  #portfolio {
+    scroll-margin-top: 100px;
+  }
+  .white-bg {
+    margin: 50px auto;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .original-img {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border: solid #fbbd0494 5px;
+    object-fit: cover;
+    object-position: 0 8%;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .alt {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border: solid #fbbd0494 5px;
+    object-fit: cover;
+    object-position: 0 30%;
+
+    transition: transform 0.5s ease-in-out;
   }
 }
 
-@media screen and (max-width: 860px) {
+@media screen and (max-width: 960px) {
   body {
     padding: none;
   }
-  #fullNav {
+  /* #fullNav {
     display: none;
-  }
+  } */
 
   .nav-toggle {
     display: block;
@@ -1573,19 +1982,108 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
     height: 5px;
   }
 
+  .hero-content {
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  .hero-container {
+    margin-top: -3.5%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+    /* margin-bottom: 500px; */
+  }
+  .hero-sub-container-one {
+    flex-shrink: 1;
+    flex-grow: 2;
+    display: flex;
+    flex-direction: column;
+    max-width: 350px;
+    /* max-height: 700px; */
+    display: flex;
+    padding-top: 5%;
+
+    align-items: center;
+  }
+  .hero-sub-container-two {
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-start;
+    align-items: center;
+    max-width: 350px;
+    max-height: 700px;
+    display: flex;
+
+    padding-top: 200px;
+  }
+
+  .hero-paragraph {
+    width: 90%;
+    font-family: 'Manrope', sans-serif;
+    font-size: 18px;
+    text-align: left;
+    margin-top: 20px;
+  }
+
+  .hero-image img {
+    max-width: 450px;
+    max-height: 450px;
+  }
+  .socialIcons {
+    padding: 0;
+    margin-top: 4%;
+    display: flex;
+    width: 100%;
+    height: 100px;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .iconContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    margin: 2px auto;
+  }
+
+  .circle {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 60px;
+    border-radius: 25%;
+    border: 4px solid rgb(241, 153, 168);
+    background-color: rgba(248, 161, 176, 0.806);
+    transition: background-color 0.5s; /* Add a smooth transition on background-color property */
+  }
+
+  .circle img {
+    width: 50px;
+    height: 50px;
+    padding: 2%;
+    border: 2px solid rgba(0, 0, 0, 0.567);
+    border-radius: 50%;
+    background-color: #fbbd0494;
+    transition: transform 0.5s, filter 0.5s; /* Add a smooth transition on transform and filter properties */
+  }
   .scrolling-words-container {
     display: flex;
     align-items: center;
-    font-size: 35px;
+    font-size: 40px;
     font-family: 'Manrope', sans-serif;
     font-weight: 500;
-
-    height: 20%;
+    margin-right: -250px;
+    height: 3%;
   }
 
   .scrolling-words-box {
-    height: 3rem;
-    margin: auto;
+    height: 1rem;
+    margin: 30px auto;
     overflow: hidden;
   }
 
@@ -1599,8 +2097,19 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    height: 3rem;
+    height: 1rem;
     list-style: none;
+  }
+
+  .enter {
+    position: relative;
+    bottom: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 16px;
+    font-family: 'Manrope', sans-serif;
   }
 
   .block-quote-container {
@@ -1609,11 +2118,18 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
     background-color: rgb(245, 191, 200);
     min-width: 90%;
     padding: 2% 5%;
-    display: flex;
+    display: none;
     flex-direction: column;
     margin: -100px auto 0px auto;
     transition: box-shadow 0.5s ease-in-out;
     z-index: 1;
+  }
+  .quote {
+    display: flex;
+    flex-direction: column;
+    align-content: baseline;
+
+    padding: 0 2%;
   }
 
   .block-quote {
@@ -1629,8 +2145,38 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
     box-shadow: 10px 15px 2px rgba(118, 118, 116, 0.491);
   }
 
+  .block-quote-container-2 {
+    border: 3px solid rgb(232, 137, 153);
+    border-radius: 25px;
+    background-color: rgb(245, 191, 200);
+    width: 100%;
+    padding: 1% 3%;
+    display: flex;
+    flex-direction: column;
+    margin: 0px 0 15px 0;
+    transition: box-shadow 0.5s ease-in-out;
+    z-index: 1;
+    min-height: 100%;
+  }
+
+  .block-quote-2 {
+    flex-grow: 2;
+    font-size: 16px;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .author-quote-2 {
+    margin-top: 1%;
+    padding-right: 30%;
+    align-self: flex-end;
+    font-size: 16px;
+  }
+
   .about-me-container {
-    margin-top: 15px;
+    margin-top: 0px;
     min-height: 75vh;
 
     padding: 0 3%;
@@ -1653,15 +2199,76 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
     align-items: center;
     box-sizing: border-box;
   }
+
   .about-me-image {
+    border-radius: 5px;
+    /* border: 5px solid blue; */
+
+    min-height: 30vh;
     min-width: 100%;
+
+    background-color: #fbbd0494;
+    border-radius: 25px 0px 0px 0px;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-content: center;
   }
+
+  .location {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+  }
+  .quote {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .location p {
+    font-size: 18px;
+    font-weight: 500px;
+    margin-top: 2%;
+  }
+  .about-me-image a {
+    color: inherit;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500px;
+    margin-top: 1%;
+  }
+  .about-me-image a:hover {
+    color: white;
+  }
+  .original-img {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border: solid #fbbd0494 5px;
+    object-fit: cover;
+    object-position: 0 8%;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .alt {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border: solid #fbbd0494 5px;
+    object-fit: cover;
+    object-position: 0 30%;
+
+    transition: transform 0.5s ease-in-out;
+  }
+
   .about-me-bio .card {
     /* padding: 5%; */
     background-color: white;
     min-height: 500px;
     min-width: 100%;
-    border-radius: 0;
+    border-radius: 0px 0px 25px 25px;
     box-shadow: none;
 
     border: 1px solid #fbbd0494;
@@ -1669,25 +2276,43 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
     transform-style: preserve-3d;
     transition: transform 0.5s;
   }
+  .front {
+    border-radius: 0px 0px 25px 25px;
+  }
+  .back {
+    border-radius: 0px 0px 25px 25px;
+  }
   .about-me-bio {
     min-width: 100%;
   }
   .about-me-tools {
-    min-height: 600px;
+    display: none;
+  }
+  .about-me-tools-2 {
+    display: flex;
+    min-height: 100px;
     min-width: 100%;
     background-color: #fbbd0494;
     border-radius: 0;
   }
+  .about-me-tools-2 h2 {
+    font-size: 18px;
+    text-decoration: underline;
+    font-weight: 700px;
+    margin-bottom: 10px;
+  }
 
-  .about-me-tools p {
+  .about-me-tools-2 p {
     margin-bottom: 4%;
-    font-size: 25px;
+    font-size: 12px;
     font-weight: 500px;
+    margin-right: 30px;
   }
 
   .toolContainer {
-    min-height: 200px;
-    min-width: 90%;
+    padding: 5px 50px 5px 0px;
+    min-height: 55px;
+    min-width: 100%;
     display: flex;
     background-color: #fbbd0494;
     justify-content: space-evenly;
@@ -1696,18 +2321,20 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
   }
 
   .toolBox {
+    height: 30px;
+    width: 30px;
     background-color: #464a48ec;
     border: 2px solid black;
     border-radius: 50%;
   }
 
   .toolBox img {
-    height: 75px;
-    width: 75px;
+    height: 50px;
+    width: 50px;
   }
 }
 
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
   #fullNav {
     display: none;
   }
@@ -1734,8 +2361,8 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
     display: flex;
     flex-direction: column;
     margin: -100px auto 0px auto;
-    /* box-shadow: 10px 20px 1px rgba(118, 118, 116, 0.491); */
-    transition: box-shadow 0.5s ease-in-out; /* Add a transition for the box-shadow property */
+    
+    transition: box-shadow 0.5s ease-in-out; 
     z-index: 1;
   }
 
@@ -1744,10 +2371,10 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
     font-family: 'Manrope', sans-serif;
     font-weight: 700;
     font-style: italic;
-    transition: transform 0.5s ease-in-out; /* Add a transition for the transform property */
+    transition: transform 0.5s ease-in-out; 
   }
 
-  /* Add a class for when the quote is raised */
+ 
   .block-quote-container.raised {
     box-shadow: 20px 30px 2px rgba(118, 118, 116, 0.491);
   }
@@ -1780,7 +2407,7 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
     min-width: 100%;
   }
   .about-me-bio .card {
-    /* padding: 5%; */
+   
     background-color: white;
     min-height: 500px;
     min-width: 100%;
@@ -1828,6 +2455,145 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
     height: 75px;
     width: 75px;
   }
+} */
+@media screen and (max-width: 860px) {
+  .nav li {
+    margin: 50px 20px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    display: inline-block;
+  }
+  .hero-content {
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  .hero-container {
+    margin-top: -3.5%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+    /* margin-bottom: 500px; */
+  }
+  .hero-sub-container-one {
+    flex-shrink: 1;
+    flex-grow: 2;
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    /* max-height: 700px; */
+    display: flex;
+    padding-top: 5%;
+
+    align-items: center;
+  }
+  .hero-sub-container-two {
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-start;
+    align-items: center;
+    max-width: 300px;
+    max-height: 700px;
+    display: flex;
+
+    padding-top: 200px;
+  }
+
+  .hero-paragraph {
+    width: 90%;
+    font-family: 'Manrope', sans-serif;
+    font-size: 16px;
+    text-align: left;
+    margin-top: 20px;
+  }
+
+  .hero-image img {
+    max-width: 400px;
+    max-height: 400px;
+  }
+  .socialIcons {
+    padding: 0;
+    margin-top: 4%;
+    display: flex;
+    width: 100%;
+    height: 100px;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .iconContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    margin: 2px auto;
+  }
+
+  .circle {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 60px;
+    border-radius: 25%;
+    border: 4px solid rgb(241, 153, 168);
+    background-color: rgba(248, 161, 176, 0.806);
+    transition: background-color 0.5s; /* Add a smooth transition on background-color property */
+  }
+
+  .circle img {
+    width: 50px;
+    height: 50px;
+    padding: 2%;
+    border: 2px solid rgba(0, 0, 0, 0.567);
+    border-radius: 50%;
+    background-color: #fbbd0494;
+    transition: transform 0.5s, filter 0.5s; /* Add a smooth transition on transform and filter properties */
+  }
+  .scrolling-words-container {
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+    margin-top: 50px;
+    margin-right: -300px;
+    height: 3%;
+  }
+
+  .scrolling-words-box {
+    height: 1rem;
+    margin: 30px auto;
+    overflow: hidden;
+  }
+
+  .scrolling-words-box ul {
+    margin: 0 0.625rem;
+    padding: 0;
+    animation: scrollUp 6s infinite;
+  }
+
+  .scrolling-words-box ul li {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 1rem;
+    list-style: none;
+  }
+
+  .enter {
+    position: relative;
+    bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 16px;
+    font-family: 'Manrope', sans-serif;
+  }
 }
 
 @media screen and (max-width: 760px) {
@@ -1859,7 +2625,9 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
   }
 
   .hero-container {
-    margin-top: -3.5%;
+    padding: 50px 20px;
+    max-width: 800px;
+    margin-top: -10%;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -1871,7 +2639,7 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
     flex-grow: 2;
     display: flex;
     flex-direction: column;
-    max-width: 350px;
+    max-width: 250px;
     /* max-height: 700px; */
     display: flex;
     padding-top: 5%;
@@ -1883,29 +2651,71 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
     flex-grow: 1;
     justify-content: center;
     align-items: center;
-    max-width: 350px;
+    max-width: 300px;
     max-height: 700px;
     display: flex;
 
     padding-top: 100px;
+    padding-bottom: 50px;
   }
 
   .hero-paragraph {
-    width: 90%;
+    width: 100%;
     font-family: 'Manrope', sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     text-align: left;
     margin-top: 20px;
   }
 
   .hero-image img {
-    max-width: 370px;
-    max-height: 370px;
+    max-width: 300px;
+    max-height: 300px;
+  }
+  .socialIcons {
+    margin-right: -125%;
+    padding: 0;
+    margin-top: 50px;
+    display: flex;
+    width: 150%;
+    height: 100px;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .iconContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    margin: 2px auto;
+  }
+
+  .circle {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 60px;
+    border-radius: 25%;
+    border: 4px solid rgb(241, 153, 168);
+    background-color: rgba(248, 161, 176, 0.806);
+    transition: background-color 0.5s; /* Add a smooth transition on background-color property */
+  }
+
+  .circle img {
+    width: 50px;
+    height: 50px;
+    padding: 2%;
+    border: 2px solid rgba(0, 0, 0, 0.567);
+    border-radius: 50%;
+    background-color: #fbbd0494;
+    transition: transform 0.5s, filter 0.5s; /* Add a smooth transition on transform and filter properties */
   }
   .scrolling-words-container {
     display: flex;
     align-items: center;
-    font-size: 23px;
+    font-size: 30px;
     font-family: 'Manrope', sans-serif;
     font-weight: 500;
 
@@ -1945,28 +2755,18 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
   }
   .about-me {
     border: 5px solid rgb(232, 137, 153);
-    padding: 60px 0;
+    padding: 0px 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
     width: 100%;
 
-    margin-top: 5%;
+    margin-top: 0%;
     background-color: rgb(241, 153, 168);
   }
   .block-quote-container {
-    border: 3px solid rgb(232, 137, 153);
-    border-radius: 25px;
-    background-color: rgb(245, 191, 200);
-    width: 90%;
-    padding: 2% 5%;
-    display: flex;
-    flex-direction: column;
-    margin: -100px auto 0px auto;
-    /* box-shadow: 10px 20px 1px rgba(118, 118, 116, 0.491); */
-    transition: box-shadow 0.5s ease-in-out; /* Add a transition for the box-shadow property */
-    z-index: 1;
+    display: none;
   }
 
   .block-quote {
@@ -1974,17 +2774,41 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
     font-family: 'Manrope', sans-serif;
     font-weight: 700;
     font-style: italic;
-    transition: transform 0.5s ease-in-out; /* Add a transition for the transform property */
+    transition: transform 0.5s ease-in-out;
+  }
+  .block-quote-container-2 {
+    border: 3px solid rgb(232, 137, 153);
+    border-radius: 25px;
+    background-color: rgb(245, 191, 200);
+    width: 100%;
+    padding: 1% 3%;
+    display: flex;
+    flex-direction: column;
+    margin: 0px 0 15px 0;
+    transition: box-shadow 0.5s ease-in-out;
+    z-index: 1;
+    min-height: 100%;
   }
 
-  /* Add a class for when the quote is raised */
-  .block-quote-container.raised {
-    box-shadow: 10px 10px 2px rgba(118, 118, 116, 0.491);
+  .block-quote-2 {
+    flex-grow: 2;
+    font-size: 16px;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .author-quote-2 {
+    margin-top: 1%;
+    padding-right: 30%;
+    align-self: flex-end;
+    font-size: 16px;
   }
 
   .about-me-container {
     margin-top: 15px;
-    min-height: 75vh;
+    min-height: 50vh;
 
     padding: 3%;
     display: flex;
@@ -2010,9 +2834,11 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
   .about-me-image {
     height: 20px;
     min-width: 100%;
-    flex-direction: column;
+    flex-direction: column-reverse;
+
     background-color: #fbbd0494;
-    border-radius: 0;
+    border-radius: 25px 25px 0px 0px;
+    padding: 10px;
   }
   .original-img {
     height: 300px;
@@ -2038,10 +2864,10 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
   .about-me-bio .card {
     padding: 10%;
     background-color: white;
-    min-height: 1200px;
+    min-height: 600px;
     max-height: 1350px;
     max-width: 80%;
-    border-radius: 0;
+    border-radius: 0px 0px 25px 25px;
     box-shadow: none;
     /* overflow: hidden; */
 
@@ -2053,7 +2879,7 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
   .about-me-bio {
     justify-content: center;
     max-width: 75%;
-    min-height: 1200px;
+    min-height: 600px;
   }
   .front,
   .back {
@@ -2068,6 +2894,7 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
     -webkit-backface-visibility: hidden;
     transform: rotateX(0deg);
     background: transparent;
+    border-radius: 0px 0px 25px 25px;
   }
 
   .back ul {
@@ -2075,15 +2902,17 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
   }
 
   .back li {
-    margin: 10px auto;
+    margin: 10px 10px;
   }
 
   .front {
     z-index: 2;
+    border-radius: 0px 0px 25px 25px;
   }
 
   .back {
     transform: rotateY(180deg);
+    border-radius: 0px 0px 25px 25px;
   }
   .about-me-bio .card p {
     text-align: left;
@@ -2106,22 +2935,31 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
     animation-iteration-count: infinite;
     color: white;
   }
-  .about-me-tools {
-    min-height: 600px;
+  .about-me-tools-2 {
+    display: flex;
+    min-height: 100px;
     min-width: 100%;
     background-color: #fbbd0494;
     border-radius: 0;
   }
-
-  .about-me-tools p {
-    margin-bottom: 4%;
-    font-size: 25px;
-    font-weight: 500px;
+  .about-me-tools-2 h2 {
+    font-size: 18px;
+    text-decoration: underline;
+    font-weight: 700px;
+    margin-bottom: 10px;
   }
 
-  .toolContainer {
-    min-height: 200px;
-    max-width: 100%;
+  .about-me-tools-2 p {
+    margin-bottom: 4%;
+    font-size: 16px;
+    font-weight: 500px;
+    margin-right: 30px;
+  }
+
+  .about-me-tools-2 .toolContainer {
+    padding: 5px 50px 5px 0px;
+    min-height: 55px;
+    min-width: 100%;
     display: flex;
     background-color: #fbbd0494;
     justify-content: space-evenly;
@@ -2130,6 +2968,8 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
   }
 
   .toolBox {
+    height: 30px;
+    width: 30px;
     background-color: #464a48ec;
     border: 2px solid black;
     border-radius: 50%;
@@ -2139,8 +2979,13 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
     height: 50px;
     width: 50px;
   }
-  .toolBox p {
-    font-size: 18px;
+
+  .about-me-tools {
+    display: none;
+  }
+
+  .toolContainer {
+    display: none;
   }
 
   .white-bg {
@@ -2226,16 +3071,11 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
   .project-button,
   .github-button {
     padding: 10px 20px;
-    background-color: #3498db;
+
     color: #fff;
     border: none;
     cursor: pointer;
     margin: 5px;
-  }
-
-  .project-button:hover,
-  .github-button:hover {
-    background-color: #2980b9;
   }
 
   .grid-item:hover .image-container {
@@ -2262,16 +3102,36 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
     display: flex;
     justify-content: center;
   }
+  .yellow-bg .container {
+    width: 95%;
+    height: 60%;
+
+    margin: 25px auto;
+    padding: 0px 0px;
+    flex-wrap: wrap;
+
+    display: flex;
+    justify-content: space-evenly;
+    /* align-items: center; */
+    background-color: rgb(249, 186, 107);
+  }
 
   .contactMessage {
     width: 90%;
     display: flex;
     flex-direction: column;
-    margin: 0 30px;
+    margin: -75px 30px;
+  }
+
+  .contactMessage h2 {
+    font-size: 25px;
+  }
+  .contactMessage p {
+    font-size: 18px;
   }
 
   .contactMessage ul {
-    margin: 50px 0;
+    margin-top: 50px;
     list-style: none;
     display: flex;
     justify-content: center;
@@ -2284,25 +3144,30 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
   .contactForm {
     margin: 0 30px;
   }
+  .formContainer {
+    width: 90%;
+    margin-bottom: 30px;
+  }
 
   #contactForm {
-    padding: 20px;
+    padding: 0px 20px;
     border: 4px solid rgb(241, 153, 168);
     border-radius: 25px;
     background-color: rgba(248, 161, 176, 0.806);
+
     max-width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    margin: 0 30px;
+    margin: 0px 30px;
   }
   form label {
     visibility: hidden;
   }
   form input {
     border-radius: 10px;
-    width: 90%;
+    width: 100%;
     border: 0;
     padding: 25px;
     height: 50px;
@@ -2311,11 +3176,11 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
     background-color: rgba(230, 195, 201, 0.665);
   }
   form textarea {
-    width: 90%;
+    width: 100%;
     padding: 25px;
     border: 0;
     border-radius: 10px;
-    height: 300px;
+    height: 150px;
     outline: none;
     font-size: 20px;
     background-color: rgba(230, 195, 201, 0.665);
@@ -2352,7 +3217,7 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
 }
 
 /* iphone SE & Smaller */
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 650px) {
   body {
     font-family: Arial, sans-serif;
     padding: 0px 0px;

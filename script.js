@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const card = document.querySelector('.about-me-bio .card');
   const flipButton = document.getElementById('flip-button');
   const returnButton = document.getElementById('return-button');
-  const image = document.querySelector('.about-me-image img');
+  const image = document.querySelector('.location img');
   function flipCard() {
     card.classList.toggle('flipped');
     updateCardContent();
@@ -94,10 +94,17 @@ document.addEventListener('DOMContentLoaded', function () {
       document.querySelector('.block-quote').innerHTML =
         "“ Be who you are and say what you feel, because those who mind don't matter, and those who matter don't mind. ”";
       document.querySelector('.author-quote').innerHTML = '-Dr. Seuss';
+      document.querySelector('.block-quote-2').innerHTML =
+        "“ Be who you are and say what you feel, because those who mind don't matter, and those who matter don't mind. ”";
+      document.querySelector('.author-quote-2').innerHTML = '-Dr. Seuss';
     } else {
       document.querySelector('.block-quote').innerHTML =
         '“ All Limitations Are Self Imposed. ”';
       document.querySelector('.author-quote').innerHTML =
+        '-Oliver Wendell Holmes';
+      document.querySelector('.block-quote-2').innerHTML =
+        '“ All Limitations Are Self Imposed. ”';
+      document.querySelector('.author-quote-2').innerHTML =
         '-Oliver Wendell Holmes';
     }
   }
