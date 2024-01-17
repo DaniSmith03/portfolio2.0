@@ -1883,6 +1883,7 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
   }
 
   .back {
+    border-radius: 25px 0px 0px 0px;
     transform: rotateY(180deg);
   }
   .about-me-tools-2 {
@@ -2275,6 +2276,10 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
 
     transform-style: preserve-3d;
     transition: transform 0.5s;
+  }
+  .about-me-bio .card.flipped {
+    transform: rotateY(180deg);
+    border-radius: 0px 0px 25px 25px;
   }
   .front {
     border-radius: 0px 0px 25px 25px;
@@ -2787,7 +2792,7 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
     margin: 0px 0 15px 0;
     transition: box-shadow 0.5s ease-in-out;
     z-index: 1;
-    min-height: 100%;
+    min-height: fit-content;
   }
 
   .block-quote-2 {
@@ -3406,7 +3411,7 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
     margin: 0px 0 15px 0;
     transition: box-shadow 0.5s ease-in-out;
     z-index: 1;
-    min-height: 100%;
+    min-height: fit-content;
   }
 
   .block-quote-2 {
@@ -3488,8 +3493,8 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
   .about-me-bio .card {
     padding: 20%;
     background-color: white;
-    min-height: 750px;
-    max-height: fit-content;
+    min-height: 850px;
+    max-height: 1000px;
     max-width: 80%;
     border-radius: 0px 0px 25px 25px;
     box-shadow: none;
@@ -3499,27 +3504,29 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
 
     transform-style: preserve-3d;
     transition: transform 0.5s;
+    margin-top: -20px;
   }
   .about-me-bio {
     justify-content: center;
     max-width: 75%;
-    min-height: 750px;
+    min-height: 800px;
+    max-height: 1000px;
     border-radius: 0px 0px 25px 25px;
   }
   .front,
   .back {
     /* background-color: #3498db;
     height: auto; */
-    /* padding: 5%; */
+    padding: 1%;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: absolute;
     backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
+    -webkit-backface-visibility: transparent;
     transform: rotateX(0deg);
     background: transparent;
-    border-radius: 0px 0px 25px 25px;
+    margin: 0px auto;
   }
 
   .back ul {
@@ -3581,7 +3588,7 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
 
   .about-me-tools-2 p {
     margin-bottom: 4%;
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 500px;
     margin-right: 0px;
   }
@@ -3746,7 +3753,7 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
     width: 90%;
     display: flex;
     flex-direction: column;
-    margin: -70px 30px -100px 0px;
+    margin: -70px auto -100px auto;
   }
 
   .contactMessage h2 {
@@ -3757,16 +3764,22 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
   }
 
   .contactMessage ul {
-    /* margin-top: 5px; */
-    margin: 20px auto;
+    width: 95%;
+    height: 10%;
+
+    margin: 20px 0px 0px -15px;
     list-style: none;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    padding: 0px;
   }
 
   .contactMessage li {
+    align-self: center;
     color: rgb(241, 153, 168);
-    /* margin: 0 20px; */
+    width: 30px;
+
+    margin: 0px;
   }
   .contactMessage a {
     font-size: 16px;
