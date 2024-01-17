@@ -2912,7 +2912,6 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
 
   .back {
     transform: rotateY(180deg);
-    border-radius: 0px 0px 25px 25px;
   }
   .about-me-bio .card p {
     text-align: left;
@@ -3242,11 +3241,11 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
 
   .hero-content {
     text-align: center;
-    margin: 20px 0;
+    margin: 0px 0px;
   }
 
   .hero-container {
-    margin-top: -3.5%;
+    margin-top: -180px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -3280,23 +3279,66 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
   .hero-paragraph {
     width: 90%;
     font-family: 'Manrope', sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     text-align: left;
-    margin-top: 20px;
+    margin-top: 0px;
+    margin-bottom: -50px;
   }
 
   .hero-image img {
-    max-width: 370px;
-    max-height: 370px;
+    max-width: 250px;
+    max-height: 250px;
+  }
+  .socialIcons {
+    margin-right: 0px;
+    padding: 0;
+    margin-top: 50px;
+    display: flex;
+    width: 100%;
+    height: 100px;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .iconContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    margin: 10px auto 0px auto;
+  }
+
+  .circle {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+    border-radius: 25%;
+    border: 4px solid rgb(241, 153, 168);
+    background-color: rgba(248, 161, 176, 0.806);
+    transition: background-color 0.5s; /* Add a smooth transition on background-color property */
+  }
+
+  .circle img {
+    width: 40px;
+    height: 40px;
+    padding: 2%;
+    border: 2px solid rgba(0, 0, 0, 0.567);
+    border-radius: 50%;
+    background-color: #fbbd0494;
+    transition: transform 0.5s, filter 0.5s; /* Add a smooth transition on transform and filter properties */
   }
   .scrolling-words-container {
     display: flex;
     align-items: center;
-    font-size: 23px;
+    font-size: 20px;
     font-family: 'Manrope', sans-serif;
     font-weight: 500;
-
-    height: 10%;
+    height: 5%;
+    margin-right: 0px;
+    margin-top: -75px;
   }
 
   .scrolling-words-box {
@@ -3320,7 +3362,6 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
   }
 
   /* bio content */
-
   .about-me-white {
     /* display: flex;
   justify-content: center;
@@ -3333,28 +3374,18 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
   }
   .about-me {
     border: 5px solid rgb(232, 137, 153);
-    padding: 60px 0;
+    padding: 0px 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
     width: 100%;
 
-    margin-top: 5%;
+    margin-top: 0%;
     background-color: rgb(241, 153, 168);
   }
   .block-quote-container {
-    border: 3px solid rgb(232, 137, 153);
-    border-radius: 25px;
-    background-color: rgb(245, 191, 200);
-    width: 90%;
-    padding: 2% 5%;
-    display: flex;
-    flex-direction: column;
-    margin: -100px auto 0px auto;
-    /* box-shadow: 10px 20px 1px rgba(118, 118, 116, 0.491); */
-    transition: box-shadow 0.5s ease-in-out; /* Add a transition for the box-shadow property */
-    z-index: 1;
+    display: none;
   }
 
   .block-quote {
@@ -3362,17 +3393,41 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
     font-family: 'Manrope', sans-serif;
     font-weight: 700;
     font-style: italic;
-    transition: transform 0.5s ease-in-out; /* Add a transition for the transform property */
+    transition: transform 0.5s ease-in-out;
+  }
+  .block-quote-container-2 {
+    border: 3px solid rgb(232, 137, 153);
+    border-radius: 25px;
+    background-color: rgb(245, 191, 200);
+    width: 100%;
+    padding: 1% 3%;
+    display: flex;
+    flex-direction: column;
+    margin: 0px 0 15px 0;
+    transition: box-shadow 0.5s ease-in-out;
+    z-index: 1;
+    min-height: 100%;
   }
 
-  /* Add a class for when the quote is raised */
-  .block-quote-container.raised {
-    box-shadow: 10px 10px 2px rgba(118, 118, 116, 0.491);
+  .block-quote-2 {
+    flex-grow: 2;
+    font-size: 16px;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .author-quote-2 {
+    margin-top: 1%;
+    padding-right: 30%;
+    align-self: flex-end;
+    font-size: 12px;
   }
 
   .about-me-container {
     margin-top: 15px;
-    min-height: 80vh;
+    min-height: 75vh;
 
     padding: 3%;
     display: flex;
@@ -3393,19 +3448,25 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    margin: 20% 0;
   }
 
   .about-me-image {
-    height: 20px;
     min-width: 100%;
-    flex-direction: column;
+    flex-direction: column-reverse;
+    height: 800px;
+    min-height: 800px;
+
     background-color: #fbbd0494;
-    border-radius: 0;
+    border-radius: 25px 25px 0px 0px;
+    padding: 10px;
+  }
+  .location p {
+    font-size: 16px;
+    width: 250px;
   }
   .original-img {
-    height: 275px;
-    width: 275px;
+    height: 175px;
+    width: 175px;
     border-radius: 50%;
     border: solid #fbbd0494 5px;
     object-fit: cover;
@@ -3414,8 +3475,8 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
   }
 
   .alt {
-    height: 275px;
-    width: 275px;
+    height: 175px;
+    width: 175px;
     border-radius: 50%;
     border: solid #fbbd0494 5px;
     object-fit: cover;
@@ -3425,12 +3486,12 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
   }
 
   .about-me-bio .card {
-    padding: 10%;
+    padding: 20%;
     background-color: white;
-    min-height: 1500px;
-    max-height: 1350px;
+    min-height: 750px;
+    max-height: fit-content;
     max-width: 80%;
-    border-radius: 0;
+    border-radius: 0px 0px 25px 25px;
     box-shadow: none;
     /* overflow: hidden; */
 
@@ -3442,7 +3503,8 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
   .about-me-bio {
     justify-content: center;
     max-width: 75%;
-    min-height: 1200px;
+    min-height: 750px;
+    border-radius: 0px 0px 25px 25px;
   }
   .front,
   .back {
@@ -3457,6 +3519,7 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
     -webkit-backface-visibility: hidden;
     transform: rotateX(0deg);
     background: transparent;
+    border-radius: 0px 0px 25px 25px;
   }
 
   .back ul {
@@ -3464,20 +3527,27 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
   }
 
   .back li {
-    margin: 10px auto;
+    margin: 10px 0px;
   }
 
   .front {
     z-index: 2;
+    border-radius: 0px 0px 25px 25px;
   }
 
   .back {
     transform: rotateY(180deg);
+    border-radius: 0px 0px 25px 25px;
+  }
+  .about-me-bio .card h2 {
+    text-align: left;
+    margin-top: 10px;
+    font-size: 20px;
   }
   .about-me-bio .card p {
     text-align: left;
     margin-top: 10px;
-    font-size: 18px;
+    font-size: 16px;
   }
   .about-me-bio .card button {
     margin-top: 30px;
@@ -3495,22 +3565,32 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
     animation-iteration-count: infinite;
     color: white;
   }
-  .about-me-tools {
-    min-height: 600px;
+  .about-me-tools-2 {
+    display: flex;
+    min-height: 400px;
     min-width: 100%;
     background-color: #fbbd0494;
     border-radius: 0;
   }
-
-  .about-me-tools p {
-    margin-bottom: 4%;
-    font-size: 25px;
-    font-weight: 500px;
+  .about-me-tools-2 h2 {
+    font-size: 18px;
+    text-decoration: underline;
+    font-weight: 700px;
+    margin-bottom: 10px;
   }
 
-  .toolContainer {
-    min-height: 125px;
-    max-width: 100%;
+  .about-me-tools-2 p {
+    margin-bottom: 4%;
+    font-size: 16px;
+    font-weight: 500px;
+    margin-right: 0px;
+  }
+
+  .about-me-tools-2 .toolContainer {
+    padding: 5px 0px 5px 0px;
+    min-height: 100px;
+    min-width: 100%;
+    max-width: fit-content;
     display: flex;
     background-color: #fbbd0494;
     justify-content: space-evenly;
@@ -3519,17 +3599,26 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
   }
 
   .toolBox {
+    flex-direction: column;
+    height: 30px;
+    width: 30px;
     background-color: #464a48ec;
     border: 2px solid black;
     border-radius: 50%;
+    align-content: center;
   }
 
   .toolBox img {
     height: 50px;
     width: 50px;
   }
-  .toolBox p {
-    font-size: 18px;
+
+  .about-me-tools {
+    display: none;
+  }
+
+  .toolContainer {
+    display: none;
   }
 
   .white-bg {
@@ -3542,7 +3631,7 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
   }
   .white-bg h2 {
     margin: 50px;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 300;
   }
   .grid {
@@ -3612,21 +3701,6 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
     margin-bottom: 10px;
   }
 
-  .project-button,
-  .github-button {
-    padding: 10px 20px;
-    background-color: #3498db;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    margin: 5px;
-  }
-
-  .project-button:hover,
-  .github-button:hover {
-    background-color: #2980b9;
-  }
-
   .grid-item:hover .image-container {
     opacity: 0.3;
 
@@ -3654,14 +3728,100 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
     background-color: #d99330;
   }
 
+  .yellow-bg .container {
+    width: 95%;
+    height: 60%;
+
+    margin: 25px auto;
+    padding: 0px 0px;
+    flex-wrap: wrap;
+
+    display: flex;
+    justify-content: space-evenly;
+    /* align-items: center; */
+    background-color: rgb(249, 186, 107);
+  }
+
   .contactMessage {
+    width: 90%;
     display: flex;
     flex-direction: column;
+    margin: -70px 30px -100px 0px;
+  }
+
+  .contactMessage h2 {
+    font-size: 20px;
+  }
+  .contactMessage p {
+    font-size: 16px;
+  }
+
+  .contactMessage ul {
+    /* margin-top: 5px; */
+    margin: 20px auto;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+  }
+
+  .contactMessage li {
+    color: rgb(241, 153, 168);
+    /* margin: 0 20px; */
+  }
+  .contactMessage a {
+    font-size: 16px;
+  }
+  .contactForm {
     margin: 0 30px;
+  }
+  .formContainer {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  #contactForm {
+    padding: 0px 20px;
+    border: 4px solid rgb(241, 153, 168);
+    border-radius: 25px;
+    background-color: rgba(248, 161, 176, 0.806);
+
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin: 0px 30px;
+  }
+  form label {
+    visibility: hidden;
+  }
+  form input {
+    border-radius: 10px;
+    width: 100%;
+    border: 0;
+    padding: 25px;
+    height: 50px;
+    outline: none;
+    font-size: 16px;
+    background-color: rgba(230, 195, 201, 0.665);
+  }
+  form textarea {
+    width: 100%;
+    padding: 25px;
+    border: 0;
+    border-radius: 10px;
+    height: 150px;
+    outline: none;
+    font-size: 16px;
+    background-color: rgba(230, 195, 201, 0.665);
+  }
+  form button {
+    width: 100%;
+    font-size: 16px;
   }
 
   footer {
-    background-color: #d99330;
+    background-color: white;
     text-align: center;
     padding: 40px 0;
   }
@@ -3672,7 +3832,7 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
   }
 
   footer li {
-    margin: 0 20px;
+    margin: 0 16px;
   }
 
   footer a {
