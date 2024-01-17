@@ -697,8 +697,8 @@ nav a:hover {
   align-items: center;
   position: absolute;
   backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  transform: rotateX(0deg);
+  -webkit-backface-visibility: transparent;
+  /* transform: rotateX(0deg); */
   background: transparent;
 }
 
@@ -1276,7 +1276,8 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
   }
 
   .back {
-    transform: rotateY(180deg);
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
   }
   .about-me-tools-2 {
     display: none;
@@ -1883,11 +1884,14 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
   .front {
     z-index: 2;
     padding: 2%;
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
   }
 
   .back {
     border-radius: 25px 0px 0px 0px;
-    transform: rotateY(180deg);
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
   }
   .about-me-tools-2 {
     display: none;
@@ -2918,9 +2922,6 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
     border-radius: 0px 0px 25px 25px;
   }
 
-  .back {
-    transform: rotateY(180deg);
-  }
   .about-me-bio .card p {
     text-align: left;
     margin-top: 10px;
