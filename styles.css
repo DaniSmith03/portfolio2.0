@@ -727,6 +727,9 @@ nav a:hover {
   -webkit-transform: rotateY(-180deg);
   transform: rotateY(-180deg);
 }
+.about-me-tools-2 {
+  display: none;
+}
 .about-me-tools {
   min-height: 600px;
   width: 500px;
