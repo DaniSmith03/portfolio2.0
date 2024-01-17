@@ -614,6 +614,7 @@ nav a:hover {
 .about-me-bio .card {
   /* padding: 5%; */
   background-color: white;
+
   height: 600px;
   width: 500px;
   border-radius: 5%;
@@ -3498,9 +3499,9 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
   }
 
   .about-me-bio .card {
-    padding: 20%;
+    padding: 0%;
     background-color: white;
-    min-height: 850px;
+    min-height: 950px;
     max-height: 1000px;
     max-width: 80%;
     border-radius: 0px 0px 25px 25px;
@@ -3516,7 +3517,7 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
   .about-me-bio {
     justify-content: center;
     max-width: 75%;
-    min-height: 800px;
+    min-height: 950px;
     max-height: 1000px;
     border-radius: 0px 0px 25px 25px;
   }
@@ -3524,7 +3525,7 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
   .back {
     /* background-color: #3498db;
     height: auto; */
-    padding: 1%;
+    padding: 3% 3% 3% 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -3539,12 +3540,16 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
   .back ul {
     list-style: none;
   }
+  .back h2 {
+    margin-bottom: 10px;
+  }
 
   .back li {
     margin: 10px 0px;
   }
 
   .front {
+    padding: 0px 10%;
     z-index: 2;
     border-radius: 0px 0px 25px 25px;
     -webkit-transform: rotateY(0deg);
@@ -3555,6 +3560,7 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
     -webkit-transform: rotateY(-180deg);
     transform: rotateY(-180deg);
     border-radius: 0px 0px 25px 25px;
+    padding: 0px 10%;
   }
   .about-me-bio .card h2 {
     text-align: left;
