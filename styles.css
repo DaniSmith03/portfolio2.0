@@ -3540,10 +3540,13 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
   .front {
     z-index: 2;
     border-radius: 0px 0px 25px 25px;
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
   }
 
   .back {
-    transform: rotateY(180deg);
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
     border-radius: 0px 0px 25px 25px;
   }
   .about-me-bio .card h2 {
