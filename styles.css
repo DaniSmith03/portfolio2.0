@@ -3373,6 +3373,9 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
     height: 3rem;
     list-style: none;
   }
+  /* .enter {
+    bottom: 10px;
+  } */
 
   /* bio content */
   .about-me-white {
@@ -3571,6 +3574,7 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
     text-align: left;
     margin-top: 10px;
     font-size: 16px;
+    text-align: justify;
   }
   .about-me-bio .card button {
     margin-top: 30px;
