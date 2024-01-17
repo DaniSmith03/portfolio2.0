@@ -477,7 +477,7 @@ nav a:hover {
   /* padding: 5% 0; */
   margin: 20px auto 0px auto;
   /* margin: -5% auto 0px auto; */
-  min-height: 80vh;
+  min-height: 40vh;
   /* border: solid red 5px; */
 }
 
@@ -535,7 +535,7 @@ nav a:hover {
   /* min-width: 100vw; */
   margin-top: -25px;
   width: 95%;
-  min-height: 70vh;
+  min-height: 35vh;
   padding: 0 3%;
   display: flex;
   align-items: center;
@@ -1170,6 +1170,7 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
     /* padding: 5%; */
     background-color: white;
     max-height: 45vh;
+    min-height: 45vh;
     min-width: 100%;
     border-radius: 0px 25px 0px 0px;
     box-shadow: none;
@@ -1287,13 +1288,13 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
     display: none;
   }
   .about-me-tools {
-    min-height: 20vh;
+    min-height: 30vh;
     min-width: 100%;
     background-color: #fbbd0494;
     border-radius: 0px 0px 25px 25px;
   }
   .about-me-tools h2 {
-    margin: 5px auto;
+    margin: 10px auto;
     text-decoration: underline;
     font-size: 25px;
     text-align: center;
@@ -2908,7 +2909,8 @@ Media query to hide fullNav and show nav-toggle when the screen is small  */
     position: absolute;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
-    transform: rotateX(0deg);
+    /* transform: rotateX(0deg); */
+
     background: transparent;
     border-radius: 0px 0px 25px 25px;
   }
